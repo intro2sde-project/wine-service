@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Jintro2sde</title>
+
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="winesearching.js"></script>
+<!-- Custom styles for this template -->
+<link href="jumbotron.css" rel="stylesheet">
+</head>
+
+<body>
+	<main role="main">
+	
+	<div class="jumbotron">
+        <div class="container">
+          <h1>Wine Research</h1>
+          <h2>Use the form to perform a research</h2>
+        </div>
+      </div>
+
+	<div class="container" ng-app="search" ng-controller="searchCtrl">
+
+		<!-- Searching row of columns -->
+		<div class="row">
+			<div class="col-md-12">
+				<form >
+				
+					<div class="form-row">
+						<div class="form-group col-md-12">
+							<label for="form.search">Search: </label> 
+							<input type="text"class="form-control" id="form.search" placeholder="Chianti Tuscany" ng-model="form.search">
+						</div>
+					</div>
+
+					<div class="form-row">
+						<div class="form-group col-md-6">
+							<label for=form.country">Country: </label>
+							<input type="text" class="form-control" id="form.country" placeholder="italy, france, japan" ng-model="form.country">
+						</div>
+						<div class="form-group col-md-6">
+							<label for=form.type">Type: </label> 
+							<input type="text"class="form-control" id="form.type" placeholder="wine, spirits, table, dessert, sparkling, fruit, cider, sake" ng-model="form.type">
+						</div>
+					</div>
+					
+					<div class="form-row">
+						<div class="form-group col-md-6">
+							<label for=form.range">Max Price: {{form.range}} $</label>
+							<input type="range" class="form-control" id="form.price" min="1" max="10000" ng-model="form.range">
+						</div>
+						<div class="form-group col-md-6">
+							<label for=form.minrating">Min Rating: {{form.rating}}</label>
+							<input type="range" class="form-control" id="form.rating" min="0" max="5" ng-model="form.rating">
+						</div>
+					</div>
+					
+					<Button class="btn btn-secondary" role="button" ng-click="search()">Search &raquo;</Button>
+				</form>
+			</div>
+		</div>
+
+		<!-- columns -->
+		<div class="row">
+			<div class="col-md-6">
+				<h2 >Name</h2>
+				<p>{{myWelcome}}</p>
+				<p>
+				</p>
+			</div>
+			<div class="col-md-6">
+				<h2>Wine Recommendations</h2>
+				<p>The hardest part of drink wine? Choose one...</p>
+				<p>
+				</p>
+			</div>
+		</div>
+
+	<footer class="container">
+		<p>&copy; Introduction to Service Design 2017/2018</p>
+	</footer>
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" />
+  
+</body>
+</html>
