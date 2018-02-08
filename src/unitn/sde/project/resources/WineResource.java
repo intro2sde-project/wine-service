@@ -369,7 +369,7 @@ public class WineResource {
     
     
     @POST
-    @Path("/search")
+    @Path("/recom")
     @Produces({MediaType.TEXT_XML,  MediaType.APPLICATION_JSON ,  MediaType.APPLICATION_XML })
     public List<Wine> getWineList(User user)  {
     	
